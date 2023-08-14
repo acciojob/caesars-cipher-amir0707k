@@ -1,6 +1,6 @@
 // Your Script here.
 
-const lookup = {
+ const lookup = {
   A: "N",
   B: "O",
   C: "P",
@@ -29,20 +29,60 @@ const lookup = {
   Z: "M",
   "?": "?",
   ",": ",",
+    ".": ".",
+  ">": ">",
+  "<": "<",
+  "/": "/",
+  "\\": "\\",
+  "|": "|",
+  "-": "-",
+  _: "_",
+  "+": "+",
+  "=": "=",
+  "!": "!",
+  "@": "@",
+  "#": "#",
+  $: "$",
+  "%": "%",
+  "^": "^",
+  "&": "&",
+  "*": "*",
+  "(": "(",
+  ")": ")",
+  "{": "{",
+  "}": "}",
+  "[": "[",
+  "]": "]",
+  "\t": "\t",
+  "\n": "\n",
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+  " ": " ",
+  '"': '"',
+  "'": "'",
+  ":": ":",
+  ";": ";",
+  "`": "`"
 };
 
 function rot13(encodedStr) {
-  const mode = encodedStr ? 1 : 2;
-  encodedStr = encodedStr ?? document.getElementById("code").value;
-  const message = encodedStr
-    .toUpperCase()
-    .split("")
-    .map((char) => lookup[char])
-    .join("");
-
-  return mode === 1
-    ? message
-    : (document.getElementById("result").innerText = message);
+  let decodedArr = []; // Your Result goes here
+  // Only change code below this line
+	 for(let i in encodedStr){
+        decodedArr[i] = lookup[encodedStr[i]];
+    }
+	decodedArr = decodedArr.join('');
+	
+	//console.log(decodedArr);
+  return decodedArr; //return decodedArr
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
