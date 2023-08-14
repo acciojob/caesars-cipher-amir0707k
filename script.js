@@ -37,6 +37,9 @@ function rot13(encodedStr) {
 	 for(let i in encodedStr){
         decodedArr[i] = lookup[encodedStr[i]];
     }
+	decodedArr.join('');
+	
+	console.log(decodedArr);
   return; //return decodedArr
 }
 
